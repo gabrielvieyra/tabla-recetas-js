@@ -9,6 +9,10 @@
             rel="stylesheet"
             href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         />
+        <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
     </head>
     <body>
         <div class="container-fluid">
@@ -41,7 +45,6 @@
                                 <th>Usuario</th>
                                 <th>Foto</th>
                                 <th>Puntuacion</th>
-                                <th>Bloqueada</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
@@ -53,13 +56,16 @@
                                 <td>sdsds</td>
                                 <td>dsds</td>
                                 <td>dsds</td>
-                                <td>dsds</td>
                                 <td>
-                                    <button class="btn btn-success">
-                                        Editar
+                                    <button
+                                        class="btn btn-success"
+                                        data-toggle="modal"
+                                        data-target="#modal-recetas"
+                                    >
+                                        <i class="fa fa-edit"></i>
                                     </button>
                                     <button class="btn btn-danger">
-                                        Eliminar
+                                        <i class="fa fa-trash"></i>
                                     </button>
                                 </td>
                             </tr>
@@ -91,7 +97,57 @@
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        <div class="modal-body">...</div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="titulo">Titulo</label>
+                                    <input
+                                        id="titulo"
+                                        name="titulo"
+                                        type="text"
+                                        class="form-control"
+                                    />
+                                </div>
+                                <div class="form-group">
+                                    <label for="ingredientes"
+                                        >Ingredientes</label
+                                    >
+                                    <input
+                                        id="ingredientes"
+                                        name="ingredientes"
+                                        type="text"
+                                        class="form-control"
+                                    />
+                                </div>
+                                <div class="form-group">
+                                    <label for="usuario">Usuario</label>
+                                    <input
+                                        id="usuario"
+                                        name="usuario"
+                                        type="text"
+                                        class="form-control"
+                                    />
+                                </div>
+                                <div class="form-group">
+                                    <label for="foto">Foto</label>
+                                    <input
+                                        id="foto"
+                                        name="foto"
+                                        type="text"
+                                        class="form-control"
+                                    />
+                                </div>
+                                <div class="form-group">
+                                    <label for="puntuacion">Puntuacion</label>
+                                    <input
+                                        id="puntuacion"
+                                        name="puntuacion"
+                                        type="text"
+                                        class="form-control"
+                                    />
+                                </div>
+                            </form>
+                        </div>
                         <div class="modal-footer">
                             <button
                                 type="button"
