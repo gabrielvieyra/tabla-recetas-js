@@ -9,6 +9,10 @@
             rel="stylesheet"
             href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         />
+        <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
     </head>
     <body>
         <div class="container-fluid">
@@ -35,35 +39,16 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>ID Imagen</th>
+                                <th>ID Receta</th>
                                 <th>Titulo</th>
-                                <th>Ingredientes</th>
+                                <th>Tiempo</th>
                                 <th>Usuario</th>
                                 <th>Foto</th>
                                 <th>Puntuacion</th>
-                                <th>Bloqueada</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Receta 1</td>
-                                <td>Ingresasasa</td>
-                                <td>sdsds</td>
-                                <td>dsds</td>
-                                <td>dsds</td>
-                                <td>dsds</td>
-                                <td>
-                                    <button class="btn btn-success">
-                                        Editar
-                                    </button>
-                                    <button class="btn btn-danger">
-                                        Eliminar
-                                    </button>
-                                </td>
-                            </tr>
-                        </tbody>
+                        <tbody id="listado-recetas"></tbody>
                     </table>
                 </div>
             </div>
@@ -91,7 +76,57 @@
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        <div class="modal-body">...</div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="titulo">Titulo</label>
+                                    <input
+                                        id="titulo"
+                                        name="titulo"
+                                        type="text"
+                                        class="form-control"
+                                    />
+                                </div>
+                                <div class="form-group">
+                                    <label for="ingredientes"
+                                        >Ingredientes</label
+                                    >
+                                    <input
+                                        id="ingredientes"
+                                        name="ingredientes"
+                                        type="text"
+                                        class="form-control"
+                                    />
+                                </div>
+                                <div class="form-group">
+                                    <label for="usuario">Usuario</label>
+                                    <input
+                                        id="usuario"
+                                        name="usuario"
+                                        type="text"
+                                        class="form-control"
+                                    />
+                                </div>
+                                <div class="form-group">
+                                    <label for="foto">Foto</label>
+                                    <input
+                                        id="foto"
+                                        name="foto"
+                                        type="text"
+                                        class="form-control"
+                                    />
+                                </div>
+                                <div class="form-group">
+                                    <label for="puntuacion">Puntuacion</label>
+                                    <input
+                                        id="puntuacion"
+                                        name="puntuacion"
+                                        type="text"
+                                        class="form-control"
+                                    />
+                                </div>
+                            </form>
+                        </div>
                         <div class="modal-footer">
                             <button
                                 type="button"
@@ -123,5 +158,7 @@
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"
         ></script>
+
+        <script src="index.js"></script>
     </body>
 </html>
