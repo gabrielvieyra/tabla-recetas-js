@@ -28,6 +28,7 @@
                         class="btn btn-primary"
                         data-toggle="modal"
                         data-target="#modal-recetas"
+                        id="nuevo"
                     >
                         Nuevo
                     </button>
@@ -85,6 +86,7 @@
                                         name="titulo"
                                         type="text"
                                         class="form-control"
+                                        autocomplete="off"
                                     />
                                 </div>
                                 <div class="form-group">
@@ -96,6 +98,7 @@
                                         name="ingredientes"
                                         type="text"
                                         class="form-control"
+                                        autocomplete="off"
                                     />
                                 </div>
                                 <div class="form-group">
@@ -105,6 +108,7 @@
                                         name="usuario"
                                         type="text"
                                         class="form-control"
+                                        autocomplete="off"
                                     />
                                 </div>
                                 <div class="form-group">
@@ -114,6 +118,7 @@
                                         name="foto"
                                         type="text"
                                         class="form-control"
+                                        autocomplete="off"
                                     />
                                 </div>
                                 <div class="form-group">
@@ -123,6 +128,7 @@
                                         name="puntuacion"
                                         type="text"
                                         class="form-control"
+                                        autocomplete="off"
                                     />
                                 </div>
                             </form>
@@ -133,10 +139,14 @@
                                 class="btn btn-secondary"
                                 data-dismiss="modal"
                             >
-                                Close
+                                Cancelar
                             </button>
-                            <button type="button" class="btn btn-primary">
-                                Save changes
+                            <button
+                                type="button"
+                                class="btn btn-primary"
+                                id="btn-guardar"
+                            >
+                                Guardar
                             </button>
                         </div>
                     </div>
