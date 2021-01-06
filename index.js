@@ -17,8 +17,34 @@ function mostrarModalNuevaReceta() {
     });
 }
 
-function mostrarModalEditarReceta() {
+async function mostrarModalEditarReceta(e) {
     cambiarTituloModal("Editar Receta");
+
+    const idReceta = e.currentTarget.getAttribute("data-id");
+
+    const receta = await getReceta(idReceta);
+
+    document.querySelector("#titulo").value = receta.title;
+    document.querySelector("#tiempo").value = receta.readyInMinutes;
+    document.querySelector("#usuario").value = receta.sourceName;
+    document.querySelector("#foto").value = receta.image;
+    document.querySelector("#puntuacion").value = receta.healthScore;
+}
+
+async function getReceta(idReceta) {
+    const url = `https://api.spoonacular.com/recipes/${idReceta}/information?apiKey=${apiKey}`;
+
+    let response = await fetch(url, {
+        method: "GET"
+    });
+
+    if (response.status === 200) {
+        let receta = await response.json();
+
+        return receta;
+    } else {
+        alert("algo salio mal");
+    }
 }
 
 function cambiarTituloModal(titulo) {
@@ -26,11 +52,7 @@ function cambiarTituloModal(titulo) {
 }
 
 function guardarReceta() {
-    const inputs = document.querySelectorAll("input");
-
-    inputs.forEach((input) => {
-        console.log(input.value);
-    });
+    //console.log("hola");
 }
 
 async function cargarRecetas() {
@@ -59,6 +81,7 @@ function mostrarRecetasEnTabla(recetas) {
         <td>${receta.healthScore}</td>
         <td>
             <button
+                data-id="${receta.id}"
                 class="btn btn-success btn-editar mr-2"
                 data-toggle="modal"
                 data-target="#modal-recetas"
@@ -80,4 +103,4 @@ function mostrarRecetasEnTabla(recetas) {
     });
 }
 
-//cargarRecetas();
+cargarRecetas();
