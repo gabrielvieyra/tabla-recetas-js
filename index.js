@@ -1,11 +1,9 @@
 const btnNuevo = document.querySelector("#nuevo");
-const btnGuardar = document.querySelector("#btn-guardar");
 
 const apiKey = "7448935c5cb74a6487bc44ca8589c040";
 const url = `https://api.spoonacular.com/recipes/random?apiKey=${apiKey}&number=8`;
 
 btnNuevo.addEventListener("click", mostrarModalNuevaReceta);
-btnGuardar.addEventListener("click", guardarReceta);
 
 function mostrarModalNuevaReceta() {
     cambiarTituloModal("Nueva Receta");
@@ -49,10 +47,6 @@ async function getReceta(idReceta) {
 
 function cambiarTituloModal(titulo) {
     document.querySelector("#modal-recetas .modal-title").innerHTML = titulo;
-}
-
-function guardarReceta() {
-    //console.log("hola");
 }
 
 async function cargarRecetas() {
